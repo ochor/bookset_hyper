@@ -1,0 +1,171 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; text-decoration: none; font-family: 'Noto Sans KR', sans-serif;}
+:root{
+    --mainColor1: rgb(43, 93, 151);
+    --mainColor2: rgb(2,161, 189);
+    --mainColor3: rgb(74, 211, 225);
+    --subColor1: rgb(239, 196, 131);
+    --subColor2: rgb(239, 219, 154);
+    --light-blue: #4db1ec;
+    --blue: #1665cc;
+    --purple: #b473bf;
+    --pink: #ffb2c1;
+    --orange: #ff9f67;
+    --yellow: #ffd673;
+    --light-green: #a2e29b;
+    --green: #00a2af;
+    --grey: #333;
+    --white: #fff;
+}
+footer{
+    width: 100vw;
+    height: 100vh;
+    background: url(../images/세븐틴푸터.gif);
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerWrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerLine{
+    margin: 1rem 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(To right, white, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    opacity: 70%;
+}
+
+
+.ticket{
+    width: 100%;
+    padding: 10px;
+}
+.ticket h1{color: rgba(255, 255, 255, 0.5);cursor: default;}
+.ticket .label{ color: rgba(255, 255, 255, 0.5);cursor: default;}
+footer h3{color: rgba(255, 255, 255, 0.7); margin: 10px;cursor: default;}
+
+
+.rewrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 80px;
+}
+
+.rewrapper:hover{
+    background: rgba(0, 0, 0, 0.4);
+    .seat{background: rgba(0, 0, 0, 0.5);}
+    .seat span .seatLine1{width: 2.5rem; transition: width 1s;}
+    .seat span .seatLine2{width: 2.5rem; transition: width 1s;}
+    .footerButton2{background: var(--subColor1); opacity: 80%; transition: background 0.5s;}
+    .footerButton2 h2{color: rgba(0, 0, 0, 0.8); transition: color 0.5s;}
+    .path1{fill: rgba(0, 0, 0, 0.8); transition: fill 0.5s;}
+    .footerButton1{background: var(--mainColor1); opacity: 80%; transition: background 0.5s;}
+    .footerButton1 h2{color: rgba(0, 0, 0, 0.8); transition: color 0.5s;}
+    .path2{fill: rgba(0, 0, 0, 0.8); transition: fill 0.5s;}
+    .price{color: white; transition: color 0.5s;}
+}
+
+
+.seat{
+    width: 25%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+.seatLine1{width: 0px; height: 1px; background: var(--subColor1);}
+.seatLine2{width: 0px; height: 1.2px; background: var(--mainColor1);}
+.seatLabel1{
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--subColor1);
+    cursor: default;
+}
+.seatLabel2{
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--mainColor1);
+    cursor: default;
+}
+.seat span{
+    display: flex;
+    align-items: center;
+}
+.seat h4{color: white; opacity: 70%; cursor: default;}
+
+
+.price{color: rgba(255, 255, 255, 0.3);cursor: default;}
+
+
+.footerButton1{
+    width: 120px;
+    height: 50px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1.5px solid var(--mainColor1);
+    cursor: pointer;
+}
+.footerButton2{
+    width: 120px;
+    height: 50px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--subColor1);
+    cursor: pointer;
+}
+.footerButton1 h2{
+    color: rgba(43, 93, 151, 0.8);
+    font-size: 1.1rem;
+}
+.footerButton2 h2{
+    color: rgba(239, 196, 131, 0.8);
+    font-size: 1rem;
+}
+Button svg{width: 1.2rem;}
+
+
+.footerNotice{
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px 15px;
+    margin-top: 3rem;
+}
+.care{
+    color: rgba(255, 255, 255, 0.3);
+    cursor: default;
+}
+.care:hover{
+    color: var(--mainColor2);
+}
+.carep{
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+.carep:hover{
+    color: var(--mainColor3);
+
+}
+.path1{fill:rgba(239, 196, 131, 0.8);}
+.path2{fill:rgba(43, 93, 151, 0.8);}

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.google apis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style_header.css">
+    <style>
+        :root {
+    --mainColor1: #2B5D97;
+    --mainColor2: #02A1BD;
+    --mainColor3: #4AD3E1;
+    --subColor1: #EFC483;
+    --subColor2: #EFDB9A;
+}
+
+/* 웹 전체 페이지를 초기 세팅해주는 구문 */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 글로벌 메뉴바 시작 */
+header{
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    /* border-radius: 0 0 40px 40px; */
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+.navbar .logo {
+    color: var(--mainColor1);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar ul {
+    list-style: none;
+    display: flex; /* 메뉴리스트는 가로로 배치되도록! */
+}
+.navbar li {
+    padding: 10px; /* 메뉴 항목 내부 영역 공간 생성해주기 */
+}
+.navbar ul a {
+    display: inline-block;
+    color: var(--mainColor1);
+    font-size: 20px;
+    padding: 0 20px;
+}
+.navbar ul a:hover{
+    color: var(--mainColor3);
+    transition: .5s;
+}
+.main-nav ul a.active{
+    opacity: 1;
+    color: var(--subColor1);
+    transition: .5s;
+}
+
+/* underline */
+#horizontal-underline{
+    position: absolute;
+    width: 0;
+    background-color: var(--mainColor1);
+    border-radius: 3px;
+    top: 0;
+    left: 0;
+    height: 4px;
+    transition: .5s;
+}
+
+/* 햄버거메뉴 */
+.menu-toggle {
+    display: none; /* 모바일 메뉴 버튼 일단 숨겨놓기! */
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    right: 10px;
+    color: white;
+    padding: .5rem;
+    transform: translate(-50%, -50%);
+}
+.menu-toggle span {
+    display: block;
+    background: var(--mainColor1);
+    width: 42px;
+    height: 4px;
+    border-radius: 3px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.menu-toggle span:nth-child(1) {
+    margin-bottom: 8px;
+}
+.menu-toggle span:nth-child(3) {
+    margin-top: 8px;
+}
+.menu-toggle.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.menu-toggle.active span:nth-child(1) {
+    margin-top: 8px;
+    margin-bottom: -4px;
+    transform: rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.menu-toggle.active span:nth-child(3) {
+    margin-top: -4px;
+    transform: rotate(135deg);
+}
+
+/* 모바일 메뉴 스타일 시작!*/
+@media only screen and (max-width: 720px) {
+    .navbar ul {
+        display: none; /* 기본 상태에서는 메뉴를 숨기고 있다. */
+        flex-direction: column; /* 가로로 되어 있던 메뉴 방향을 다시 세로로 떨궈준다. */
+        position: fixed; /* 고정 위치- 탑 */
+        width: 100%;
+        top: 107px; /* 상단 로고와 메뉴 아이콘이 보이도록 메뉴 시작라인을 좀 아래로 떨어뜨려서 시작해줌 */
+        background: rgba(255, 255, 255, 0.6);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);  
+        align-items: center;
+        line-height: 1.6;
+        padding: 20px 0;
+    }
+    .navbar.scale-up-hor-right {
+        -webkit-animation: scale-up-hor-right 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: scale-up-hor-right 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+    .navbar.mobile-nav ul {
+        display: flex; /* 메뉴를 표시해주기! */
+    }
+    .menu-toggle {
+        display: block; /* 모바일 메뉴 버튼 표시 */
+        cursor: pointer; /* 마우스 커서 포인터 */
+        margin-top: 20px;
+    }
+}
+
+
+
+      /*LYJ
+      ================================================================================*/
+      #section4{
+        width:100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        vertical-align: middle;
+    }
+    #cards{
+        max-width: 1200px;
+        width: 800px;
+        padding: 100px 0;
+        position: relative;
+    }
+    #card1{
+        height: 300px;
+        background-image: linear-gradient(0deg, var(--subColor1), var(--subColor2));
+        box-shadow: 0px 0px 10px 1px  rgba(145, 145, 145, 0.5);
+        text-align: right;
+    }
+    #card2{
+        height: 300px;
+        margin-top: 30px;
+        background-image: linear-gradient(0deg, var(--mainColor3), var(--subColor2));
+        box-shadow: 0px 0px 10px 1px  rgba(145, 145, 145, 0.5);
+        text-align: left;
+    }
+    #card3{
+        height: 300px;
+        margin-top: 30px;
+        background-image: linear-gradient(0deg, var(--mainColor2), var(--mainColor3));
+        box-shadow: 0px 0px 10px 1px  rgba(145, 145, 145, 0.5);
+        text-align: right;
+    }
+    
+    /*글자 효과---------------------*/
+    .name{
+        padding: 0px 100px;
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+    }
+    .card_year{
+        padding: 0px 100px;
+        color: white;
+    }
+    .card_text{
+        text-align: left;
+        padding: 50px 100px;
+        color: white;
+    }
+    .card_t{
+        padding-top: 30px;
+    }
+    
+    /*비누방울 효과 -----------------------------------------------------------*/
+    #card1 .card1_C1{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 2%;
+        left: -10%;
+        box-shadow: 0 8px 32px 0 rgba(170, 139, 44, 0.37);
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px );
+        border-radius: 70%;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    #card1 .card1_C2{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 20%;
+        right: -3%;
+        box-shadow: 0 8px 32px 0 rgba(170, 139, 44, 0.37);
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px );
+        border-radius: 70%;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    #card2 .card2_C1{
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: 30%;
+        right: 50%;
+        box-shadow: 0 8px 32px 0 rgba(170, 139, 44, 0.37);
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px );
+        border-radius: 70%;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    #card2 .card2_C2{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        bottom: 33%;
+        right: 40%;
+        box-shadow: 0 8px 32px 0 rgba(44, 113, 170, 0.37);
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px );
+        border-radius: 70%;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    #card3 .card3_C1{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 4%;
+        right: 10%;
+        box-shadow: 0 8px 32px 0 rgba(44, 113, 170, 0.37);
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px );
+        border-radius: 70%;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+/*footer
+=====================================================================================*/
+footer{
+    width: 100vw;
+    height: 100vh;
+    background: url(../images/세븐틴푸터.gif);
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerWrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerLine{
+    margin: 1rem 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(To right, white, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    opacity: 70%;
+}
+
+
+.ticket{
+    width: 100%;
+    padding: 10px;
+}
+.ticket h1{color: rgba(255, 255, 255, 0.5);cursor: default;}
+.ticket .label{ color: rgba(255, 255, 255, 0.5);cursor: default;}
+footer h3{color: rgba(255, 255, 255, 0.7); margin: 10px;cursor: default;}
+
+
+.rewrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 80px;
+}
+
+.rewrapper:hover{
+    background: rgba(0, 0, 0, 0.4);
+    .seat{background: rgba(0, 0, 0, 0.5);}
+    .seat span .seatLine1{width: 2.5rem; transition: width 1s;}
+    .seat span .seatLine2{width: 2.5rem; transition: width 1s;}
+    .footerButton2{background: var(--subColor1); opacity: 80%; transition: background 0.5s;}
+    .footerButton2 h2{color: rgba(0, 0, 0, 0.8); transition: color 0.5s;}
+    .path1{fill: rgba(0, 0, 0, 0.8); transition: fill 0.5s;}
+    .footerButton1{background: var(--mainColor1); opacity: 80%; transition: background 0.5s;}
+    .footerButton1 h2{color: rgba(0, 0, 0, 0.8); transition: color 0.5s;}
+    .path2{fill: rgba(0, 0, 0, 0.8); transition: fill 0.5s;}
+    .price{color: white; transition: color 0.5s;}
+}
+
+
+.seat{
+    width: 25%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+.seatLine1{width: 0px; height: 1px; background: var(--subColor1);}
+.seatLine2{width: 0px; height: 1.2px; background: var(--mainColor1);}
+.seatLabel1{
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--subColor1);
+    cursor: default;
+}
+.seatLabel2{
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--mainColor1);
+    cursor: default;
+}
+.seat span{
+    display: flex;
+    align-items: center;
+}
+.seat h4{color: white; opacity: 70%; cursor: default;}
+
+
+.price{color: rgba(255, 255, 255, 0.3);cursor: default;}
+
+
+.footerButton1{
+    width: 120px;
+    height: 50px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1.5px solid var(--mainColor1);
+    cursor: pointer;
+}
+.footerButton2{
+    width: 120px;
+    height: 50px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--subColor1);
+    cursor: pointer;
+}
+.footerButton1 h2{
+    color: rgba(43, 93, 151, 0.8);
+    font-size: 1.1rem;
+}
+.footerButton2 h2{
+    color: rgba(239, 196, 131, 0.8);
+    font-size: 1rem;
+}
+Button svg{width: 1.2rem;}
+
+
+.footerNotice{
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px 15px;
+    margin-top: 3rem;
+}
+.care{
+    color: rgba(255, 255, 255, 0.3);
+    cursor: default;
+}
+.care:hover{
+    color: var(--mainColor2);
+}
+.carep{
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+.carep:hover{
+    color: var(--mainColor3);
+
+}
+.path1{fill:rgba(239, 196, 131, 0.8);}
+.path2{fill:rgba(43, 93, 151, 0.8);}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">SUMMER FESTIVAL</a>
+            <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Speakers</a></li>
+                <li><a href="#">Ticket</a></li>
+                <div id="horizontal-underline"></div>
+            </ul>
+        </div>
+    </header>
+    <script>
+    // underline
+    let horizontalBar = document.getElementById("horizontal-underline");
+    let horizontalMenus = document.querySelectorAll(".navbar ul a");
+    
+    function horizontalIndicator(e) {
+        horizontalBar.style.left = e.offsetLeft + "px";
+        horizontalBar.style.width = e.offsetWidth + "px";
+        horizontalBar.style.top = e.offsetTop + e.offsetHeight + "px";
+    }
+
+   
+    // Set initial underline bar position to the first menu item
+        window.onload = function() {
+        horizontalBar.style.transition = 'none';
+        horizontalIndicator(horizontalMenus[0]);
+    };
+
+    horizontalMenus.forEach((menu, index) =>
+        menu.addEventListener("click", (e) => {
+        horizontalBar.style.transition = index === 0 ? 'none' : '.5s';
+        horizontalIndicator(e.currentTarget)
+    })
+);
+
+
+     // 햄버거메뉴
+     document.getElementById("mobile-menu").addEventListener("click", function() {
+        document.querySelector(".menu-toggle").classList.toggle("active");
+        document.querySelector(".navbar").classList.toggle("mobile-nav");
+    });
+    </script>
+
+    <!--5. LYJ-->
+    <section id="section4">
+        <figure id="cards">
+            <article id="card1">
+                <!--비누 방울 효과-->
+                <div class="card1_C1"></div>
+                <div class="card1_C2"></div>
+                <!--아이돌 설명-->
+                <div class="card_t">
+                    <p class="name">SISTAR</p>
+                    <p class="card_year">2010~2017 - 스타쉽 엔터테인먼트</p>
+                    <p class="card_text">
+                        씨스타는 대한민국의 4인조 걸 그룹으로 로엔 엔터테인먼트의 산하 레이블인 스타쉽 엔터테인먼트 소속 그룹이었다. 
+                        멤버 구성은 효린, 보라, 소유, 다솜으로 구성되어 있었다.
+                    </p>
+                </div>
+            </article>
+            <article id="card2">
+                <!--비누 방울 효과-->
+                <div class="card2_C1"></div>
+                <div class="card2_C2"></div>
+                <!--아이돌 설명-->
+                <div class="card_t">
+                    <p class="name">SEVENTEEN</p>
+                    <p class="card_year">2015 - 플레디스 엔터테인먼트</p>
+                    <p class="card_text">
+                        세븐틴은 플레디스 소속으로 2015년 5월 26일에 데뷔한 대한민국의 13인조 보이 그룹이다. 그룹 내에는 퍼포먼스, 보컬, 힙합팀이 존재한다. 
+                        '세븐틴'이라는 팀명은 팀 인원 13 + 3개의 유닛 하나의 캐럿+1로, 13+3+1=17 이란 뜻이다.
+                    </p>
+                </div>
+            </article>
+            <article id="card3">
+                <!--비누 방울 효과-->
+                <div class="card3_C1"></div>
+                <!--아이돌 설명-->
+                <div class="card_t">
+                    <p class="name">NEWJEANS</p>
+                    <p class="card_year">2022 - 어도어</p>
+                    <p class="card_text">NewJeans는 2022년 7월 22일에 데뷔한 대한민국의 5인조 걸 그룹으로, 소속사는 하이브 산하의 레이블인 어도어이다.
+                        SM 엔터테인먼트 비주얼 디렉터 출신으로 하이브에 영입된 민희진이 프로듀서로 나서서 발굴한 걸 그룹이다.</p>
+                </div>
+            </article>
+        </section>
+    
+        <!--6.푸터섹션(Sia)-->
+        <footer>
+            <section id="footerWrapper">
+                <div class="ticket">
+                    <h1>티켓 예약</h1>
+                    <p class="label">Reservation to Ticket</p>
+                </div>
+                <div class="footerLine"></div>
+                <div class="general">
+                    <h3>General Admission</h3>
+                    <div class="rewrapper">
+                        <div class="seat"><div class="seatWrapper"><span><div class="seatLine2"></div><p class="seatLabel2">TIER2</p></span><h4>일반석</h4></div></div>
+                        <p class="price">1,000 WON</p>
+                        <a href="./popup.html" target="_blank">
+                        <button class="footerButton1" href="#"><h2>예매하기</h2>
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 46 46" style="enable-background:new 0 0 46 46;" xml:space="preserve">
+                            <g>
+                            <path class="path2" d="M11.003,40.094c-1.338,1.352-1.338,3.541,0,4.893c1.336,1.35,3.506,1.352,4.844,0l19.15-19.539c1.338-1.352,1.338-3.543,0-4.895L15.847,1.014c-1.338-1.352-3.506-1.352-4.844,0s-1.338,3.541-0.002,4.893L26.706,23L11.003,40.094z"/>
+                            </g>
+                            </svg>
+                        </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="vip">
+                    <h3>VIP</h3>
+                    <div class="rewrapper">
+                        <div class="seat"><div class="seatWrapper"><span><div class="seatLine1"></div><p class="seatLabel1">TIER1</p></span><h4>특별석</h4></div></div>
+                        <p class="price">2,000 WON</p>
+                    <a href="./popup.html" target="_blank">
+                        <button class="footerButton2"><h2>예매하기</h2>
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 46 46" style="enable-background:new 0 0 46 46;" xml:space="preserve">
+                            <g>
+                            <path class="path1" d="M11.003,40.094c-1.338,1.352-1.338,3.541,0,4.893c1.336,1.35,3.506,1.352,4.844,0l19.15-19.539c1.338-1.352,1.338-3.543,0-4.895L15.847,1.014c-1.338-1.352-3.506-1.352-4.844,0s-1.338,3.541-0.002,4.893L26.706,23L11.003,40.094z"/>
+                            </g>
+                            </svg>
+                        </button>
+                    </a>
+                    </div>
+                </div>
+                <article class="footerNotice">
+                    <h4 class="care">예매시 주의사항</h4>
+                    <p class="carep">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>
+                        Recusandae quam obcaecati accusantium temporibus provident voluptates architecto suscipit vel velit,
+                        aspernatur odio enim? Reiciendis sint earum fugit necessitatibus ipsam illum vero.</p>
+                </article>
+            </section>
+        </footer>
+</body>
+</html>

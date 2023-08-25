@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing</title>
+    <style>
+*{margin: 0; padding: 0; text-decoration: none;}
+:root{
+    --mainColor1: rgb(43, 93, 151);
+    --mainColor2: rgb(2,161, 189);
+    --mainColor3: rgb(74, 211, 225);
+    --subColor1: rgb(239, 196, 131);
+    --subColor2: rgb(239, 219, 154);
+    --light-blue: #4db1ec;
+    --blue: #1665cc;
+    --purple: #b473bf;
+    --pink: #ffb2c1;
+    --orange: #ff9f67;
+    --yellow: #ffd673;
+    --light-green: #a2e29b;
+    --green: #00a2af;
+    --grey: #333;
+    --white: #fff;
+}
+#modal{
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(var(--pink), var(--purple));
+    padding: 6rem 1rem 2rem;
+}
+#modal h1{
+    color: var(--white);
+    opacity: 70%;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+}
+.modalWrapper{
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+.ticket-form {
+    width: 100%;
+    margin: 0 auto;
+}
+.labeel {
+    color: var(--white);
+    opacity: 70%;
+    display: block;
+    margin-bottom: .5rem;
+}
+.ticket-field {
+    background: rgba(255,255,255,.3);
+    padding: 1rem 0;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    border-color: var(--mainColor1);
+}
+.ticket-btn {
+    background: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: none;
+    cursor: cell;
+    font-size: 20px;
+    font-weight: bold;
+}
+.ticket-btn:hover{
+    background: var(--subColor1);
+    opacity: 80%;
+    color: var(--mainColor1);
+}
+.modalTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerWrapper{
+    margin-top: 2rem;
+}
+.footerWrapper a{
+    color: var(--mainColor1);
+}
+.footerWrapper p{
+    color: rgba(0, 0, 0, 0.5);
+}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="modal">
+        <div class="modalWrapper">
+            <div class="modalTitle">
+                <h1>Ticket</h1>
+            </div>
+        <form class="ticket-form" action="#">
+            <label class="labeel">Name</label>
+            <input class="ticket-field" type="text" placeholder="    예 : ZzomZzomDdaRi GilDong Hong">
+            <label class="labeel">Email</label>
+            <input class="ticket-field" type="email" placeholder="    예 : hello@example.com">
+            <input class="ticket-btn" type="submit" value="예매하기">
+        </form>
+        <div class="footerWrapper">
+            <p>
+                <a href="mailto:info@example.om">문의사항</a> | <small>&copy; 2023 Summer Festival</small>
+            </p>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
